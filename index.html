@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet"> 
     </head>
 
-<body>
+<body onload="clockRealtime()">
 
     <div class="" id="bg">
 
@@ -20,6 +20,10 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <span class="info mr-2 ">Time <span id="localtime">14:00:23</span></span>
+                </div>
             
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
@@ -136,12 +140,12 @@
                     <div class="col-4">
                         <h2 class="mb-2">Discover</h2>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Discover</a></li>
-                            <li><a href="#">Experience</a></li>
-                            <li><a href="#">History</a></li>
-                            <li><a href="#">Culture</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Fez</a></li>
+                            <li><a href="#">Marrakech</a></li>
+                            <li><a href="#">Casablanca</a></li>
+                            <li><a href="#">Agadir</a></li>
+                            <li><a href="#">Ourzazate</a></li>
+                            <li><a href="#">Tangier</a></li>
                         </ul>
                     </div>
                     <div class="col-2">
@@ -167,6 +171,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <script>
+
+        function clockRealtime() {
+            var clock = new Date();
+            var hours = clock.getHours();
+            var minutes = clock.getMinutes();
+            var seconds = clock.getSeconds();
+
+            //AM PM
+            var amPm = (hours < 12) ? "AM" : "PM";
+            
+            hours = (hours > 12) ? hours - 12 : hours;
+            
+            hours = ("0" + hours).slice(-2);
+            minutes = ("0" + minutes).slice(-2);
+            seconds = ("0" + seconds).slice(-2);
+
+            document.getElementById("localtime").innerHTML = hours + " : " + minutes + " : " + seconds + " " + amPm;
+            var t = setTimeout(clockRealtime, 1000);
+        }
+
+    </script>
+
+    
+
 </body>
 </html>
+
+
+<!--test kommentar-->
 
