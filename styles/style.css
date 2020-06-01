@@ -3,9 +3,17 @@
     src: url("../fonts/Oswald/static/Oswald-Regular.ttf");
     }
 
+
 body {
     margin: 0;
 }
+
+/*modal design*/
+
+.info {
+    color: #fff;
+}
+
 
 #bg {
     margin: 0;
@@ -240,3 +248,5 @@ font-size: 40px;
         font-size: 18px;
         color: black;
     }
+
+    <!--test kommentar-->
